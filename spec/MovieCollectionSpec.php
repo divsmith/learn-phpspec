@@ -16,5 +16,7 @@ class MovieCollectionSpec extends ObjectBehavior
     function it_stores_a_collection_of_movies(Movie $movie)
     {
         $this->add($movie);
+
+        $this->shouldHaveCount(1);
     }
 }
