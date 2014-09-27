@@ -4,6 +4,12 @@ class Movie {
 
     protected $rating;
     protected $watched = false;
+    protected $title;
+
+    function __construct($title)
+    {
+        $this->title = $title;
+    }
 
     public function watch()
     {
@@ -33,5 +39,10 @@ class Movie {
     public function validateRatingRange($rating)
     {
         if ($rating > 5) throw new InvalidArgumentException();
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
     }
 }

@@ -7,8 +7,9 @@ use Prophecy\Argument;
 
 class MovieSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function let()
     {
+        $this->beConstructedWith('The Matrix');
         $this->shouldHaveType('Movie');
     }
 
@@ -29,5 +30,10 @@ class MovieSpec extends ObjectBehavior
         $this->watch();
 
         $this->shouldBeWatched();
+    }
+
+    function it_can_fetch_the_title_of_the_movie()
+    {
+        $this->getTitle()->shouldBe('The Matrix');
     }
 }
