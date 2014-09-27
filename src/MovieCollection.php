@@ -1,10 +1,17 @@
 <?php
 
-class MovieCollection
+class MovieCollection implements Countable
 {
 
-    public function add($argument1)
+    protected $collection;
+
+    public function add($movie)
     {
-        // TODO: write logic here
+        $this->collection[] = $movie;
+    }
+
+    public function count()
+    {
+        return count($this->collection);
     }
 }
