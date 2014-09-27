@@ -23,4 +23,11 @@ class MovieSpec extends ObjectBehavior
     {
         $this->shouldThrow('InvalidArgumentException')->duringSetRating(8);
     }
+
+    function it_can_be_marked_as_watched()
+    {
+        $this->watch();
+
+        $this->shouldBeWatched();
+    }
 }
