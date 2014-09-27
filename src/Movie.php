@@ -2,4 +2,8 @@
 
 class Movie {
 
+    public function watch()
+    {
+
+    }
 } 
