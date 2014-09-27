@@ -7,6 +7,11 @@ class MovieCollection implements Countable
 
     public function add($movie)
     {
+        if (is_array($movie))
+        {
+            return array_map([$this, 'add'], $movie);
+        }
+        
         $this->collection[] = $movie;
     }
 

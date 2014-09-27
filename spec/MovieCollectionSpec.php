@@ -19,4 +19,11 @@ class MovieCollectionSpec extends ObjectBehavior
 
         $this->shouldHaveCount(1);
     }
+
+    function it_can_accept_multiple_movies_to_add_at_once(Movie $movie1, Movie $movie2)
+    {
+        $this->add([$movie1, $movie2]);
+
+        $this->shouldHaveCount(2);
+    }
 }
