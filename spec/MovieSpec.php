@@ -18,4 +18,9 @@ class MovieSpec extends ObjectBehavior
 
         $this->getRating()->shouldBe(5);
     }
+
+    function its_rating_should_not_exceed_five()
+    {
+        $this->shouldThrow('InvalidArgumentException')->duringSetRating(8);
+    }
 }

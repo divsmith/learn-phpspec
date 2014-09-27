@@ -11,6 +11,7 @@ class Movie {
 
     public function setRating($rating)
     {
+        if ($rating > 5) throw new InvalidArgumentException();
         $this->rating = $rating;
     }
 
